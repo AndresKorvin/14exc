@@ -11,6 +11,13 @@ public class Repository {
     }
 
     protected void saveProduct(Product product) {
+        Product tmpProd = findById(product.getId());
+        if (tmpProd != null) {
+            throw new AlreadyExistsException(
+                    "Element with id: " + tmpProd.getId() + " already exists"
+            );
+        }
+
         Product[]  tmp = new Product[products.length + 1];
         int cnt = 0;
         for (Product prod: products
