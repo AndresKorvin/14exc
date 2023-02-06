@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,7 +32,7 @@ class RepositoryTest {
 
     @Test
     void delProduct() {
-        repository.delProduct(2);
+        repository.removeById(2);
 
         Product[] expected = {book2};
         Product[] actual = repository.findAll();

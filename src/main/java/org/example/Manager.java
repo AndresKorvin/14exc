@@ -1,7 +1,7 @@
 package org.example;
 public class Manager {
     Repository repository;
-    public Manager(Repository repository) {
+    protected Manager(Repository repository) {
         this.repository = repository;
     }
     public void add(Product product) {
